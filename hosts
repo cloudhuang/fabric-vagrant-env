@@ -1,0 +1,11 @@
+127.0.0.1       localhost
+192.168.99.9  orderer.example.com
+192.168.99.10 peer0.org1.example.com
+192.168.99.11 peer1.org1.example.com
+192.168.99.20 peer0.org2.example.com
+192.168.99.21 peer1.org2.example.com
+
+# The following lines are desirable for IPv6 capable hosts
+::1     localhost ip6-localhost ip6-loopback
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters

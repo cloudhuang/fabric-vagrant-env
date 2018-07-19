@@ -1,0 +1,63 @@
+[
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-cli",
+		"hostname": "cli.example.com",
+		"ip": "192.168.99.8",
+		"ram": "1024",
+		"vcpu": "1",
+		"shell": "echo 'hello fabric'",
+		"description": "The fabric cli server"
+	}, 
+	
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-orderer",
+		"hostname": "orderer.example.com",
+		"ip": "192.168.99.9",
+		"ram": "2048",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-orderer.sh && echo 'done'",
+		"description": "The fabric orderer server"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org1-peer0",
+		"hostname": "peer0.org1.example.com",
+		"ip": "192.168.99.10",
+		"ram": "2048",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org1-peer0.sh && echo 'done'",
+		"description": "Org1-peer0"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org1-peer1",
+		"hostname": "peer1.org1.example.com",
+		"ip": "192.168.99.11",
+		"ram": "2048",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org1-peer1.sh && echo 'done'",
+		"description": "Org1-peer1"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org2-peer0",
+		"hostname": "peer0.org2.example.com",
+		"ip": "192.168.99.20",
+		"ram": "2048",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org2-peer0.sh && echo 'done'",
+		"description": "Org2-peer0"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org2-peer1",
+		"hostname": "peer1.org2.example.com",
+		"ip": "192.168.99.21",
+		"ram": "2048",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org2-peer1.sh && echo 'done'",
+		"description": "Org2-peer1"
+	}
+]

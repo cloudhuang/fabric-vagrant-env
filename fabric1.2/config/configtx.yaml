@@ -1,0 +1,73 @@
+################################################################################
+#   ORGANIZATIONS
+################################################################################
+Organizations:
+  - &OrdererOrg
+      Name: OrdererOrg
+      ID: OrdererMSP
+      MSPDir: /vagrant/fabric/config/crypto-config/ordererOrganizations/example.com/msp
+  - &Org1
+      Name: Org1MSP
+      ID: Org1MSP
+      MSPDir: /vagrant/fabric/config/crypto-config/peerOrganizations/org1.example.com/msp
+      AnchorPeers:
+        - Host: peer0.org1.example.com
+          Port: 7051
+  - &Org2
+      Name: Org2MSP
+      ID: Org2MSP
+      MSPDir: /vagrant/fabric/config/crypto-config/peerOrganizations/org2.example.com/msp
+      AnchorPeers:
+        - Host: peer0.org2.example.com
+          Port: 7051
+
+################################################################################
+#   ORDERER
+################################################################################
+Orderer: &OrdererDefaults
+  OrdererType: solo
+  Addresses:
+    - orderer.example.com:7050
+  BatchTimeout: 2s
+  BatchSize:
+    MaxMessageCount: 10
+    AbsoluteMaxBytes: 99 MB
+    PreferredMaxBytes: 512 KB
+
+################################################################################
+#   APPLICATION
+################################################################################
+Application: &ApplicationDefaults
+  Organizations:
+
+
+################################################################################
+#   PROFILE
+################################################################################
+Profiles:
+  TwoOrgsOrdererGenesis:
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+          - *OrdererOrg
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *Org1
+        - *Org2          
+    Consortiums:
+      SampleConsortium:
+        Organizations:
+            - <<: *Org1
+            - <<: *Org2
+  TwoOrgsChannel:
+    Consortium: SampleConsortium
+    Orderer:
+      <<: *OrdererDefaults
+      Organizations:
+          - *OrdererOrg
+    Application:
+      <<: *ApplicationDefaults
+      Organizations:
+        - *Org1
+        - *Org2 
