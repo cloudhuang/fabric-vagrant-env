@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
 		srv.vm.box = server['box']
 		srv.vm.hostname = server['hostname']
 		srv.vm.network 'private_network', ip: server['ip']
+		srv.vm.network :forwarded_port, guest: 8080, host: 8080
 		srv.vm.provider :virtualbox do |vb|
 			vb.memory = server['ram']
 			vb.cpus = server['vcpu']

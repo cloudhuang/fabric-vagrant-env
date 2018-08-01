@@ -59,5 +59,25 @@
 		"vcpu": "2",
 		"shell": "sudo /vagrant/bin/start-org2-peer1.sh && echo 'done'",
 		"description": "Org2-peer1"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org1-ca-server",
+		"hostname": "ca.org1.example.com",
+		"ip": "192.168.99.31",
+		"ram": "512",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org1-ca-server.sh && echo 'done'",
+		"description": "Org2-peer1"
+	},
+	{
+		"box": "fabric-base.box",
+		"name": "fabric-org2-ca-server",
+		"hostname": "ca.org2.example.com",
+		"ip": "192.168.99.32",
+		"ram": "512",
+		"vcpu": "2",
+		"shell": "sudo /vagrant/bin/start-org2-ca-server.sh && echo 'done'",
+		"description": "Org2-peer1"
 	}
 ]

@@ -52,14 +52,17 @@ The fabric sources are compiled under the base box
 
 ## Servers
 
-| Server Name       | IP            | Comment        |
-| :---------------- | ------------- | -------------- |
-| fabric-cli        | 192.168.99.8  | fabric client  |
-| fabric-orderer    | 192.168.99.9  | fabric orderer |
-| fabric-org1-peer0 | 192.168.99.10 | org1 peer0     |
-| fabric-org1-peer1 | 192.168.99.11 | org1 peer1     |
-| fabric-org2-peer0 | 192.168.99.20 | org2 peer0     |
-| fabric-org2-peer1 | 192.168.99.21 | org2 peer1     |
+| Server Name           | Domain                 | IP            | Comment              |
+| :-------------------- | ---------------------- | ------------- | -------------------- |
+| fabric-cli            |                        | 192.168.99.8  | fabric client        |
+| fabric-orderer        | orderer.example.com    | 192.168.99.9  | fabric orderer       |
+| fabric-org1-peer0     | peer0.org1.example.com | 192.168.99.10 | org1 peer0           |
+| fabric-org1-peer1     | peer1.org1.example.com | 192.168.99.11 | org1 peer1           |
+| fabric-org2-peer0     | peer0.org2.example.com | 192.168.99.20 | org2 peer0           |
+| fabric-org2-peer1     | peer1.org2.example.com | 192.168.99.21 | org2 peer1           |
+| fabric-org1-ca-server | ca.org1.example.com    | 192.168.99.31 | org1 ca server       |
+| fabric-org2-ca-server | ca.org2.example.com    | 192.168.99.32 | org2 ca server       |
+| fabric-explorer       | explorer.example.com   | 192.168.99.41 | Hyperledger Explorer |
 
 ## Fabric-cli
 

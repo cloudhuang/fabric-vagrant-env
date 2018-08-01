@@ -1,0 +1,1 @@
+fabric-ca-server start -H /vagrant/fabric/config/fabric-org2-ca-server/ --boot admin:admin >> ./org2_ca_log.log 2>&1 &
